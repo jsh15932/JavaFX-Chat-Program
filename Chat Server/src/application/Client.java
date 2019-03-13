@@ -1,32 +1,13 @@
 package application;
 
-import java.awt.Insets;
-import java.awt.TextArea;
 import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Iterator;
-import java.util.Vector;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
-
 import org.omg.CORBA.portable.InputStream;
 import org.omg.CORBA.portable.OutputStream;
-
-import javafx.application.Platform;
-import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.text.Font;
-import javafx.stage.Stage;
 
 public class Client {
 
 	Socket socket;
-	private ServerSocket serverSocket;
-	private ThreadPoolExecutor threadPool;
-	private Vector<Client> clients;
-	
 	public Client(Socket socket) {
 		this.socket = socket;
 		receive();
